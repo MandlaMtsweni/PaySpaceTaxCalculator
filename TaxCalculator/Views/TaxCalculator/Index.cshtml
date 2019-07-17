@@ -1,0 +1,70 @@
+﻿@model TaxCalculator.Models.TaxCalculatorViewModel
+
+<h4>Tax Calculator</h4>
+
+<div class="row">
+    <div class="col-md-10">
+        <form asp-controller="TaxCalculator" asp-action="Index">
+            @*<label>Enter Annual Salary</label><br />
+            <input type="text" name="AnnualSalary"><br />
+            <label>Enter Postal Code</label><br />
+            <input type="text" name="PostalCode">
+            <br />*@
+
+            <div class="form-group">
+                <label asp-for="Calculation.Salary" class="control-label">Enter Annual Salary</label><br />
+                <input asp-for="Calculation.Salary" />
+                <span asp-validation-for="Calculation.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calculation.PostalCode" class="control-label">Postal Code</label><br />
+                <input asp-for="Calculation.PostalCode" />
+                <span asp-validation-for="Calculation.PostalCode" class="text-danger"></span>
+            </div>
+
+            <br />
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th> Postal Code</th>
+                        <th> Salary</th>
+                        <th>Tax Amount Owed</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model.calculations)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostalCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Salary)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalOwedIncomeTax)
+                        </td>
+                    </tr>
+                    }
+                            @*<tr>*@
+                            @*<td>
+                    @Html.DisplayNameFor(model => model.Calculation.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Calculation.Salary)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Calculation.TotalOwedIncomeTax)
+                </td>*@
+                            @*</tr>*@
+                    </tbody>
+            </table>
+            <div>
+                <input type="submit" value="Calculate" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
