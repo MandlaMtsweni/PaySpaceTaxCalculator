@@ -14,8 +14,6 @@ Instructions to run the application
  find login deatils under solution TaxCalculator/Area/InitialUser
 
 
-// Due to time i couldn't do as much i can, some stuff is missing like unit testing, but i have added integration test,
-  the styling is not up to par as well, i'm writing this comments i know i can do much better given enough time.
-  this work is only for two days, since i didn't get a chance to do it over the weekend. 
+// Due to time i couldn't do as much i can.
   
   Thank you
